@@ -11,8 +11,6 @@ import com.example.retrofittodos.model.TodoList
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
-    //private val todoList = mutableListOf<Todo>()
-
     private val diffCallback = object : DiffUtil.ItemCallback<Todo>() {
         override fun areContentsTheSame(oldItem: Todo, newItem: Todo): Boolean {
             return oldItem.id == newItem.id
@@ -30,12 +28,6 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
         set(value) { differ.submitList(value)}
 
     override fun getItemCount() = todos.size
-
-//    fun submitList(todos : List<Todo>) {
-//        todoList.clear()
-//        todoList.addAll(todos)
-//        notifyDataSetChanged()
-//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(ItemTodoBinding.inflate(
