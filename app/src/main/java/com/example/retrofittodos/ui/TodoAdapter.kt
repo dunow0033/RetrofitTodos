@@ -7,7 +7,6 @@ import com.example.retrofittodos.databinding.ItemTodoBinding
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.example.retrofittodos.model.Todo
-import com.example.retrofittodos.model.TodoList
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 

@@ -2,7 +2,6 @@ package com.example.retrofittodos.ui.viewmodel
 
 import androidx.lifecycle.*
 import com.example.retrofittodos.model.Todo
-import com.example.retrofittodos.model.TodoList
 import com.example.retrofittodos.repository.TodoRepository
 import com.example.retrofittodos.utils.Resource
 import kotlinx.coroutines.flow.collect
