@@ -9,8 +9,5 @@ import retrofit2.http.Query
 interface TodoService {
 
     @GET("/todos")
-    suspend fun getTodos(
-        @Query("title") title: String = "delectus aut autem",
-        @Query("completed") completed: Boolean = false
-    ): Response<TodoList>
+    suspend fun getTodos(): Response<List<Todo>>
 }

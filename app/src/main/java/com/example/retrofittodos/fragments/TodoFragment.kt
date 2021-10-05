@@ -10,12 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.retrofittodos.R
 import com.example.retrofittodos.api.ApiManager
 import com.example.retrofittodos.databinding.FragmentTodosBinding
 import com.example.retrofittodos.repository.TodoRepository
 import com.example.retrofittodos.ui.viewmodel.TodoViewModel
 import com.example.retrofittodos.ui.viewmodel.TodoViewModelFactory
-import com.example.retrofittodos.utils.Resource
 
 class TodoFragment : Fragment() {
 
@@ -46,20 +46,8 @@ class TodoFragment : Fragment() {
         ).get(TodoViewModel::class.java)
 
         todoViewModel.todoInfo.observe(viewLifecycleOwner, Observer {
-            todoAdapter.todos = it.data!!.todo
+            todoAdapter.todos = it.data!!.subList(0, it.data.size - 1)
         })
-
-//        todoViewModel.todoInfo.observe(viewLifecycleOwner){ resource ->
-//            when (resource) {
-//                is Resource.Loading -> {
-//                    binding.progressBar.isVisible = true
-//                }
-//                is Resource.Success -> {
-//                    binding.progressBar.isVisible = false
-//                    todoAdapter.submitList(resource.data.todo)
-//                }
-//            }
-//        }
     }
 
     private fun setupRecyclerView() = binding.rvTodos.apply {

@@ -10,8 +10,8 @@ import kotlinx.coroutines.launch
 
 class TodoViewModel(private val todoRepo: TodoRepository) : ViewModel() {
 
-    private var _todoInfo: MutableLiveData<Resource<TodoList>> = MutableLiveData()
-    val todoInfo: LiveData<Resource<TodoList>> get() = _todoInfo
+    private var _todoInfo: MutableLiveData<Resource<List<Todo>>> = MutableLiveData()
+    val todoInfo: LiveData<Resource<List<Todo>>> get() = _todoInfo
 
     init {
         getTodos()
