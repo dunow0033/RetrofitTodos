@@ -46,7 +46,8 @@ class TodoFragment : Fragment() {
         ).get(TodoViewModel::class.java)
 
         todoViewModel.todoInfo.observe(viewLifecycleOwner, Observer {
-            todoAdapter.todos = it.data!!.subList(0, it.data.size - 1)
+            //todoAdapter.todos = it.data!!.subList(0, it.data.size - 1)
+            todoAdapter.differ.submitList(it.data)
         })
     }
 
